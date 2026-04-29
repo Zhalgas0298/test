@@ -17,17 +17,25 @@
 
         /* --- ПЕРВАЯ СТРАНИЦА --- */
         section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-            background-size: contain;
-            background-position: center;
-            background-attachment: fixed;
-        }
+    /* Высота секции всегда равна высоте экрана устройства */
+    min-height: 100vh; 
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+
+    /* ГЛАВНЫЕ НАСТРОЙКИ ФОНА */
+    background-size: cover;      /* Растягивает фото, чтобы закрыть весь экран без дырок */
+    background-position: center;  /* Центрирует фото, чтобы самое важное было посередине */
+    background-repeat: no-repeat; /* Запрещает повторение картинки */
+    
+    /* УДАЛИ background-attachment: fixed; если он был. 
+       На мобилках он часто вызывает тот самый "зум", который ты видишь. */
+}
 
         .photo-1 { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('1.jpg'); }
         .photo-2 { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('2.jpg'); }
